@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app>
+  <head>
+    <title>Chat Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/token.js"></script>
+    <style>
+      body {
+        padding-top: 60px;
+      }
+    </style>
+  <body>
+    <h3>Braintree Sale</h3>
+    <form action="/process/settle" method="post">
+      <input type="text" name="amount" placeholder="Amount"/><br/>
+      <div id="ui"></div>
+      <input type="submit" name="Submit">
+      
+    </form>
+    <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+    <script>
+      //The timeout is needed so that the AJAX call from token.js is returned before calling braintree.setup
+      /*global braintree*/
+      /*global btToken*/
+      setTimeout(function () {
+        braintree.setup(btToken, "dropin", {
+          container: "ui"
+        });
+      }, 2000);
+    </script>
+    
+  </body>
+</html>
