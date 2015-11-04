@@ -7,9 +7,11 @@ module.exports = function (app) {
         var gateway = app.get('btgateway'),
             options = {};
         
+       console.log(req.params);
         if (req.params.custid) {
-            options.customerId = req.params.customerId;
+            options.customerId = req.params.custid;
         }
+        console.log(options);
             
         gateway.clientToken.generate(options, function (err, result) {
         if (err) {
