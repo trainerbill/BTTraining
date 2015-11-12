@@ -10,12 +10,15 @@
         padding-top: 60px;
       }
     </style>
-  <body>
-    <h3>Braintree Settlement</h3>
-    <form action="/process/settle" method="post">
-      <input type="text" name="trxid" placeholder="Transaction ID"/><br/>
-      <input type="submit" name="Submit">
-      
-    </form>
+  <body class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Braintree Settlement</h3>
+        <form action="/process/settle" method="post">
+          <input class="form-control" type="text" name="trxid" placeholder="Transaction ID"/><br/>
+          <input type="submit" name="Submit">
+        </form>
+      </div>
+    </div>
   </body>
 </html>
