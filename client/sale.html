@@ -18,19 +18,19 @@
       <input type="text" name="amount" placeholder="Amount"/><br/>
       <div id="ui"></div>
       <input type="submit" name="Submit">
-      
     </form>
+    
     <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
     <script>
-      //The timeout is needed so that the AJAX call from token.js is returned before calling braintree.setup
+      //Call the get client token helper
+      getBraintreeClientToken();
       /*global braintree*/
-      /*global btToken*/
-      setTimeout(function () {
+      //Function that is executed when the helper gets the token
+      function braintreeRender(btToken) {
         braintree.setup(btToken, "dropin", {
           container: "ui"
         });
-      }, 2000);
+      }
     </script>
-    
   </body>
 </html>
