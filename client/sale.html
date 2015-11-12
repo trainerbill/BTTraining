@@ -12,13 +12,17 @@
         padding-top: 60px;
       }
     </style>
-  <body>
-    <h3>Braintree Sale</h3>
-    <form action="/process/sale" method="post">
-      <input type="text" name="amount" placeholder="Amount"/><br/>
-      <div id="ui"></div>
-      <input type="submit" name="Submit">
-    </form>
+  <body class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Braintree Sale</h3>
+        <form action="/process/sale" method="post">
+          <input class="form-control" type="text" name="amount" placeholder="Amount"/><br/>
+          <div id="ui"></div>
+          <input type="submit" name="Submit">
+        </form>
+      </div>
+    </div>
     
     <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
     <script>
